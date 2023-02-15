@@ -70,7 +70,6 @@ class Post extends Model
 
     public function remove()
     {
-        // Storage::delete('uploads/' . $this->image);
         $this->removeImage();
         $this->delete();
     }
@@ -97,8 +96,6 @@ class Post extends Model
     {
         if ($ids == null) {return;}
 
-        // dd($this->tags());
-        
         $this->tags()->sync($ids);
     }
 
@@ -156,10 +153,6 @@ class Post extends Model
 
     public function setDateAttribute($value)
     {
-
-        // $date = Carbon::createFromFormat('Y-m-d', $value)->format('d/m/y');
-        // dd($date);
-
         $this->attributes['date'] = $value;
     }
 
@@ -231,8 +224,6 @@ class Post extends Model
 
     public function related()
     {
-        // return (self::where('is_featured', 1)->get());
-
         return self::all()->except($this->id);
     }
 

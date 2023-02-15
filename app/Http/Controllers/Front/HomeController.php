@@ -27,7 +27,6 @@ class HomeController extends Controller
     public function tag($slug)
     {
         $tag = Tag::where('slug', $slug)->firstOrFail();
-        // $posts = $tag->posts;
         $posts = $tag->posts()->where('status', 0)->paginate(6);
 
         return view('front.pages.list', ['posts' => $posts]);

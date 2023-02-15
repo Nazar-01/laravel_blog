@@ -11,7 +11,6 @@ class SubscribersController extends Controller
     public function subscribe(Request $request)
     {
         $this->validate($request, [
-        // 'email' => ''
         ]);
 
         $sub = Subscription::add($request->get('email'));

@@ -99,12 +99,6 @@ class User extends Authenticatable
         return '/uploads/' . $this->avatar;
     }
 
-    // public function makeAdmin()
-    // {
-    //     $this->user_id = 1;
-    //     $this->save();
-    // }
-
     public function makeReader()
     {
         $this->user_id = 0;

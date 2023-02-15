@@ -23,15 +23,11 @@ class ProfileController extends Controller
             'name' => 'required',
             'email' => 'required',
         ]);
-
-        // dd($request->file('avatar'));
         
         $user->edit($request->all());
         $user->generatePassword($request->get('password'));
         $user->uploadAvatar($request->file('avatar'));
 
         return redirect()->back()->with('status', 'Профиль успешно обновлен');
-
-        // dd($request);
     }
 }

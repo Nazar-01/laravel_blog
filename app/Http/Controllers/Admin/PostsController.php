@@ -52,9 +52,6 @@ class PostsController extends Controller
             'image' => 'nullable|image',
         ]);
 
-        // dd($request->get('is_featured'));
-        // $post = Post::add($request->all());
-
         $post = new Post();
         $post = $post->add($request->all());
         
@@ -115,9 +112,6 @@ class PostsController extends Controller
             'date' => 'required',
             'image' => 'nullable|image',
         ]);
-
-        // dd($request->get('is_featured'));
-        // $post = Post::add($request->all());
 
         $post = Post::find($id);
         $post->edit($request->all());
